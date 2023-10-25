@@ -30,7 +30,7 @@ subto lotesexactos: forall <t,i> in T*P:
 	x[t,i] == 10 * w[t,i];
 
 subto defstock: forall <t,i> in T*P:
-	s[t,i] == s[t-1,i] + x[t,i] - d[t,i];
+	s[t,i] == s[t-1,i] + x[t,i] + y[t,i] - d[t,i];
 
 subto capacidad: forall <t> in T:
 	sum <i> in P: s[t,i] <= k;
@@ -44,11 +44,5 @@ subto terc: forall <t> in T:
 subto terc_min: forall <t,i> in T*P:
 	y[t,i] >= 20 * z[t, i];
 
-
-
-
-
-
-
-
-
+subto min_y: forall <t,i> in T*P:
+	y[t,i] <= 200 * z[t, i];
