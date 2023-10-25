@@ -43,6 +43,9 @@ subto terc: forall <t> in T:
 subto terc_min: forall <t,i> in T*P:
 	y[t,i] >= 20 * z[t, i];
 
+subto max_y: forall <t,i> in T*P:
+	y[t,i] <= 200 * z[t, i];
+
 
 
 
